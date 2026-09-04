@@ -25,13 +25,25 @@ Dynamic Island (compact/minimal/expanded). Both are generated from
 Captured on a real iOS 26.5 simulator run — including a genuine on-device
 Foundation Models response in the Weekly Digest shot below, not a mock.
 
-| Onboarding | Times | Permission |
-|---|---|---|
-| ![Onboarding welcome](Screenshots/01-onboarding-welcome.png) | ![Pick check-in times](Screenshots/02-onboarding-times.png) | ![Alarm permission explainer](Screenshots/03-onboarding-permission.png) |
-
-| Today (empty) | Today (active task) | Weekly Digest | Settings |
-|---|---|---|---|
-| ![Today, no task yet](Screenshots/04-today-empty.png) | ![Today with an active task and Sharpen](Screenshots/05-today-active-task.png) | ![Weekly Digest with on-device AI summary](Screenshots/06-weekly-digest.png) | ![Settings with alarms scheduled](Screenshots/07-settings.png) |
+<table>
+<tr>
+<th>Onboarding</th><th>Times</th><th>Permission</th>
+</tr>
+<tr>
+<td><img src="Screenshots/01-onboarding-welcome.png" width="220" alt="Onboarding welcome"></td>
+<td><img src="Screenshots/02-onboarding-times.png" width="220" alt="Pick check-in times"></td>
+<td><img src="Screenshots/03-onboarding-permission.png" width="220" alt="Alarm permission explainer"></td>
+</tr>
+<tr>
+<th>Today (empty)</th><th>Today (active task)</th><th>Weekly Digest</th><th>Settings</th>
+</tr>
+<tr>
+<td><img src="Screenshots/04-today-empty.png" width="220" alt="Today, no task yet"></td>
+<td><img src="Screenshots/05-today-active-task.png" width="220" alt="Today with an active task and Sharpen"></td>
+<td><img src="Screenshots/06-weekly-digest.png" width="220" alt="Weekly Digest with on-device AI summary"></td>
+<td><img src="Screenshots/07-settings.png" width="220" alt="Settings with alarms scheduled"></td>
+</tr>
+</table>
 
 ## Try it right now
 
