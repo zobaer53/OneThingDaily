@@ -11,8 +11,9 @@ Claude published earlier — this repo is the code that follows it.
 - **OneThingTodayDomain** — entities, use cases, repository protocols.
   Pure Swift, no Apple frameworks. Phase 0 + Phase 1, done and tested.
 - **OneThingTodayData** — SwiftData persistence (Phase 2), AlarmKit
-  scheduling (Phase 3), and the ActivityKit-backed Live Activity + relay
-  engine (Phase 4).
+  scheduling (Phase 3), the ActivityKit-backed Live Activity + relay
+  engine (Phase 4), and the on-device Foundation Models AI service
+  (Phase 5).
 
 `OneThingToday/` — the app target (Today / Schedule screens, composition
 root). `OneThingTodayWidget/` — the widget extension target: the Live
@@ -42,8 +43,9 @@ xcodebuild test -scheme OneThingTodayKit-Package -destination 'platform=iOS Simu
 
 ## What's next
 
-Phase 5 (Foundation Models) is next — on-device "Sharpen" and the weekly
-digest summary, with a real fallback for devices/settings where the model
-isn't available. Everything before it (Phases 0–4: domain layer,
-persistence, AlarmKit scheduling, and the Live Activity relay engine) is
-built and passing its exit tests on the iOS 26.2 SDK.
+Phase 6 (app presentation layer) is next — onboarding, the real Today/Weekly
+Digest/Settings screens, and polish beyond the placeholder UI used to prove
+out each phase so far. Everything before it (Phases 0–5: domain layer,
+persistence, AlarmKit scheduling, the Live Activity relay engine, and the
+on-device Foundation Models "Sharpen" + weekly digest summary) is built and
+passing its exit tests on the iOS 26.2 SDK.

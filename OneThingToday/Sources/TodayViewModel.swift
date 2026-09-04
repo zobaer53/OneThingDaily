@@ -11,22 +11,39 @@ final class TodayViewModel {
     private let sessions: FocusSessionRepository
     private let startUseCase: StartMorningCheckInUseCase
     private let completeUseCase: CompleteTaskUseCase
+    private let sharpenUseCase: SharpenTaskUseCase
+    private let ai: AIAssistRepository
 
     var session: FocusDaySession?
     var draftText: String = ""
     var errorMessage: String?
+    var isAISharpenAvailable = false
 
-    init(sessions: FocusSessionRepository, activities: LiveActivityRepository) {
+    init(sessions: FocusSessionRepository, activities: LiveActivityRepository, ai: AIAssistRepository) {
         self.sessions = sessions
+        self.ai = ai
         self.startUseCase = StartMorningCheckInUseCase(sessions: sessions, activities: activities)
         self.completeUseCase = CompleteTaskUseCase(sessions: sessions, activities: activities)
+        self.sharpenUseCase = SharpenTaskUseCase(sessions: sessions, activities: activities, ai: ai)
     }
 
     func load() async {
+        isAISharpenAvailable = await ai.isAvailable
         do {
             let today = try await sessions.today()
             session = today
             draftText = today.taskText
+        } catch {
+            errorMessage = "\(error)"
+        }
+    }
+
+    func sharpen() async {
+        guard let id = session?.id else { return }
+        errorMessage = nil
+        do {
+            session = try await sharpenUseCase(dayID: id)
+            draftText = session?.taskText ?? draftText
         } catch {
             errorMessage = "\(error)"
         }

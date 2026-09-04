@@ -15,7 +15,8 @@ struct OneThingTodayApp: App {
                     ContentView(
                         viewModel: TodayViewModel(
                             sessions: sessionsRepository,
-                            activities: ActivityKitLiveActivityService()
+                            activities: ActivityKitLiveActivityService(),
+                            ai: FoundationModelsAIService()
                         )
                     )
                 }

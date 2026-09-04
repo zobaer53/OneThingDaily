@@ -31,8 +31,16 @@ struct ContentView: View {
                         .font(.headline)
                 }
                 if !session.isDone {
-                    Button("Mark Done", role: .none) {
-                        Task { await viewModel.complete() }
+                    HStack {
+                        Button("Mark Done", role: .none) {
+                            Task { await viewModel.complete() }
+                        }
+                        if viewModel.isAISharpenAvailable && !session.isSharpened {
+                            Button("Sharpen") {
+                                Task { await viewModel.sharpen() }
+                            }
+                            .buttonStyle(.bordered)
+                        }
                     }
                 }
             }
