@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14B46B4C985BEA83A3891113 /* FocusActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AE2A6CBD839C0BD2E274E /* FocusActivityWidget.swift */; };
+		3ECC2D2F4901B3E78E2E2F29 /* OneThingTodayData in Frameworks */ = {isa = PBXBuildFile; productRef = A6362EE8112DBD1F1423EF34 /* OneThingTodayData */; };
+		4A00BC762DA5FFEEAC543946 /* OneThingTodayDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 9ADA82CA309A40AA37E3E152 /* OneThingTodayDomain */; };
+		4A0E3F13F281B5365FB32521 /* OneThingTodayData in Frameworks */ = {isa = PBXBuildFile; productRef = B095B892E90F1F77BD4F04AE /* OneThingTodayData */; };
+		9633EB9E87ECFF42B92BC709 /* OneThingTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */; };
+		9D163F155EEDA15332AC51AA /* OneThingTodayDomain in Frameworks */ = {isa = PBXBuildFile; productRef = D244F140AB22F69485243DF3 /* OneThingTodayDomain */; };
+		9D4D53D9B95A348F1A11AACA /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD34E732F951DD1FAE19D0 /* TodayViewModel.swift */; };
+		9FD151B4CB30F6D72136D9FB /* NoopSchedulingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBA01C6D156E5B2E5BC021 /* NoopSchedulingRepository.swift */; };
+		B90DD4BCC0FA4ED4B46D5896 /* ScheduleSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76DC0DBD6ADBB4EC65D0D1E /* ScheduleSettingsView.swift */; };
+		BFC1EC14DEB318D92A8EC4DA /* ScheduleSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCDAB45C0E1924FBCF4393D /* ScheduleSettingsViewModel.swift */; };
+		C4EEFD9C7D1D6C6C7AB2271C /* OneThingTodayWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F853AA79E29A8D1A6BD8BCEB /* OneThingTodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D1B61D05F20318193EBE34E7 /* OneThingTodayWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BEEB8337B0A8EB54DEC29 /* OneThingTodayWidgetBundle.swift */; };
+		ED291BB7D9445649871BE5D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288F36BCD047F09558FDD90 /* ContentView.swift */; };
+		FEF7832983DB2F4C899430F2 /* FocusLockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E467F9B222C535A418DBE /* FocusLockScreenView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9BFBE719FF7B2DFF1A4E4A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16079AE1C8CE7E0B676B9E2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D46301601FD65F00239A704;
+			remoteInfo = OneThingTodayWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CBF76103B1E7D566A253907 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C4EEFD9C7D1D6C6C7AB2271C /* OneThingTodayWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09DD34E732F951DD1FAE19D0 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		1FBEE3FB60F2E5030CA8FE88 /* OneThingTodayKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OneThingTodayKit; path = OneThingTodayKit; sourceTree = SOURCE_ROOT; };
+		48CBA01C6D156E5B2E5BC021 /* NoopSchedulingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoopSchedulingRepository.swift; sourceTree = "<group>"; };
+		7FCDAB45C0E1924FBCF4393D /* ScheduleSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsViewModel.swift; sourceTree = "<group>"; };
+		A35BEEB8337B0A8EB54DEC29 /* OneThingTodayWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneThingTodayWidgetBundle.swift; sourceTree = "<group>"; };
+		C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneThingTodayApp.swift; sourceTree = "<group>"; };
+		C76DC0DBD6ADBB4EC65D0D1E /* ScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsView.swift; sourceTree = "<group>"; };
+		D98AE2A6CBD839C0BD2E274E /* FocusActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusActivityWidget.swift; sourceTree = "<group>"; };
+		DA6E567D1AAB7612381AE881 /* OneThingToday.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OneThingToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E288F36BCD047F09558FDD90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F853AA79E29A8D1A6BD8BCEB /* OneThingTodayWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OneThingTodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3E467F9B222C535A418DBE /* FocusLockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusLockScreenView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B3E16C5BCC9DCC31200BEB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D163F155EEDA15332AC51AA /* OneThingTodayDomain in Frameworks */,
+				3ECC2D2F4901B3E78E2E2F29 /* OneThingTodayData in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1D97078F2D18CE72AC50BA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A00BC762DA5FFEEAC543946 /* OneThingTodayDomain in Frameworks */,
+				4A0E3F13F281B5365FB32521 /* OneThingTodayData in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		310D7888D1AB43B14CA6CFAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA6E567D1AAB7612381AE881 /* OneThingToday.app */,
+				F853AA79E29A8D1A6BD8BCEB /* OneThingTodayWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E095655AFCAFBC7DC0B544F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1FBEE3FB60F2E5030CA8FE88 /* OneThingTodayKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		AE5A43379746366FD54D1B50 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E288F36BCD047F09558FDD90 /* ContentView.swift */,
+				48CBA01C6D156E5B2E5BC021 /* NoopSchedulingRepository.swift */,
+				C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */,
+				C76DC0DBD6ADBB4EC65D0D1E /* ScheduleSettingsView.swift */,
+				7FCDAB45C0E1924FBCF4393D /* ScheduleSettingsViewModel.swift */,
+				09DD34E732F951DD1FAE19D0 /* TodayViewModel.swift */,
+			);
+			name = Sources;
+			path = OneThingToday/Sources;
+			sourceTree = "<group>";
+		};
+		C77FAFE6259731C063F7B513 = {
+			isa = PBXGroup;
+			children = (
+				8E095655AFCAFBC7DC0B544F /* Packages */,
+				AE5A43379746366FD54D1B50 /* Sources */,
+				F537F132929248F5E6756DE2 /* Sources */,
+				310D7888D1AB43B14CA6CFAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F537F132929248F5E6756DE2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D98AE2A6CBD839C0BD2E274E /* FocusActivityWidget.swift */,
+				FE3E467F9B222C535A418DBE /* FocusLockScreenView.swift */,
+				A35BEEB8337B0A8EB54DEC29 /* OneThingTodayWidgetBundle.swift */,
+			);
+			name = Sources;
+			path = OneThingTodayWidget/Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E7E9425DF89E1F602F9D62A /* OneThingToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D23BB0E7BD4D7CDAD71C9CD /* Build configuration list for PBXNativeTarget "OneThingToday" */;
+			buildPhases = (
+				31CF2EA709E17A47F9834529 /* Sources */,
+				4B3E16C5BCC9DCC31200BEB7 /* Frameworks */,
+				7CBF76103B1E7D566A253907 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				254BF81771C1186689AA19FC /* PBXTargetDependency */,
+			);
+			name = OneThingToday;
+			packageProductDependencies = (
+				D244F140AB22F69485243DF3 /* OneThingTodayDomain */,
+				A6362EE8112DBD1F1423EF34 /* OneThingTodayData */,
+			);
+			productName = OneThingToday;
+			productReference = DA6E567D1AAB7612381AE881 /* OneThingToday.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D46301601FD65F00239A704 /* OneThingTodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F323CC451A8F7D333D38183 /* Build configuration list for PBXNativeTarget "OneThingTodayWidget" */;
+			buildPhases = (
+				2B6802FC94940D59467739A3 /* Sources */,
+				C1D97078F2D18CE72AC50BA4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneThingTodayWidget;
+			packageProductDependencies = (
+				9ADA82CA309A40AA37E3E152 /* OneThingTodayDomain */,
+				B095B892E90F1F77BD4F04AE /* OneThingTodayData */,
+			);
+			productName = OneThingTodayWidget;
+			productReference = F853AA79E29A8D1A6BD8BCEB /* OneThingTodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16079AE1C8CE7E0B676B9E2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6E7E9425DF89E1F602F9D62A = {
+						DevelopmentTeam = AF97PVM7U3;
+						ProvisioningStyle = Automatic;
+					};
+					8D46301601FD65F00239A704 = {
+						DevelopmentTeam = AF97PVM7U3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EB4936CD6F1D1E2AFE041A7A /* Build configuration list for PBXProject "OneThingToday" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C77FAFE6259731C063F7B513;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E50CCB263BF783F53521FB92 /* XCLocalSwiftPackageReference "OneThingTodayKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 310D7888D1AB43B14CA6CFAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E7E9425DF89E1F602F9D62A /* OneThingToday */,
+				8D46301601FD65F00239A704 /* OneThingTodayWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B6802FC94940D59467739A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14B46B4C985BEA83A3891113 /* FocusActivityWidget.swift in Sources */,
+				FEF7832983DB2F4C899430F2 /* FocusLockScreenView.swift in Sources */,
+				D1B61D05F20318193EBE34E7 /* OneThingTodayWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31CF2EA709E17A47F9834529 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED291BB7D9445649871BE5D7 /* ContentView.swift in Sources */,
+				9FD151B4CB30F6D72136D9FB /* NoopSchedulingRepository.swift in Sources */,
+				9633EB9E87ECFF42B92BC709 /* OneThingTodayApp.swift in Sources */,
+				B90DD4BCC0FA4ED4B46D5896 /* ScheduleSettingsView.swift in Sources */,
+				BFC1EC14DEB318D92A8EC4DA /* ScheduleSettingsViewModel.swift in Sources */,
+				9D4D53D9B95A348F1A11AACA /* TodayViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		254BF81771C1186689AA19FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D46301601FD65F00239A704 /* OneThingTodayWidget */;
+			targetProxy = E9BFBE719FF7B2DFF1A4E4A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14CA82E5FA42C79940C54210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneThingTodayWidget/OneThingTodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF97PVM7U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneThingTodayWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "One Thing Today";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zobaerhossain.OneThingToday.OneThingTodayWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1B20E2CDB98A24254F41DC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3B62403F496A4833415BB521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OneThingToday/OneThingToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF97PVM7U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneThingToday/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zobaerhossain.OneThingToday;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4BAA1DF2BF64193146ED5EB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OneThingToday/OneThingToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF97PVM7U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneThingToday/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zobaerhossain.OneThingToday;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75BAF9AF9335889CB81710F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneThingTodayWidget/OneThingTodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF97PVM7U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneThingTodayWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "One Thing Today";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zobaerhossain.OneThingToday.OneThingTodayWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B013C2BAA842C8B6F70C3475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D23BB0E7BD4D7CDAD71C9CD /* Build configuration list for PBXNativeTarget "OneThingToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BAA1DF2BF64193146ED5EB7 /* Debug */,
+				3B62403F496A4833415BB521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6F323CC451A8F7D333D38183 /* Build configuration list for PBXNativeTarget "OneThingTodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75BAF9AF9335889CB81710F7 /* Debug */,
+				14CA82E5FA42C79940C54210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EB4936CD6F1D1E2AFE041A7A /* Build configuration list for PBXProject "OneThingToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B20E2CDB98A24254F41DC8B /* Debug */,
+				B013C2BAA842C8B6F70C3475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E50CCB263BF783F53521FB92 /* XCLocalSwiftPackageReference "OneThingTodayKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = OneThingTodayKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9ADA82CA309A40AA37E3E152 /* OneThingTodayDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OneThingTodayDomain;
+		};
+		A6362EE8112DBD1F1423EF34 /* OneThingTodayData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OneThingTodayData;
+		};
+		B095B892E90F1F77BD4F04AE /* OneThingTodayData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OneThingTodayData;
+		};
+		D244F140AB22F69485243DF3 /* OneThingTodayDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OneThingTodayDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 16079AE1C8CE7E0B676B9E2C /* Project object */;
+}

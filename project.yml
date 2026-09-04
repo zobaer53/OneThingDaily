@@ -1,0 +1,72 @@
+name: OneThingToday
+options:
+  bundleIdPrefix: com.zobaerhossain
+  deploymentTarget:
+    iOS: "26.0"
+
+packages:
+  OneThingTodayKit:
+    path: OneThingTodayKit
+
+targets:
+  OneThingToday:
+    type: application
+    platform: iOS
+    sources:
+      - OneThingToday/Sources
+    dependencies:
+      - package: OneThingTodayKit
+        product: OneThingTodayDomain
+      - package: OneThingTodayKit
+        product: OneThingTodayData
+      - target: OneThingTodayWidget
+        embed: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zobaerhossain.OneThingToday
+        DEVELOPMENT_TEAM: AF97PVM7U3
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_ENTITLEMENTS: OneThingToday/OneThingToday.entitlements
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: "YES"
+        # NSAlarmKitUsageDescription doesn't get picked up by Xcode's
+        # INFOPLIST_KEY_* synthesis in this Xcode version (confirmed by
+        # inspecting the actual built Info.plist — every other
+        # INFOPLIST_KEY_* setting made it in, this one silently didn't).
+        # INFOPLIST_FILE here supplies it directly; Xcode merges its
+        # contents with the auto-generated keys below rather than
+        # replacing them.
+        INFOPLIST_FILE: OneThingToday/Info.plist
+        INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: "YES"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_NSSupportsLiveActivities: "YES"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+
+  OneThingTodayWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - OneThingTodayWidget/Sources
+    dependencies:
+      - package: OneThingTodayKit
+        product: OneThingTodayDomain
+      - package: OneThingTodayKit
+        product: OneThingTodayData
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zobaerhossain.OneThingToday.OneThingTodayWidget
+        DEVELOPMENT_TEAM: AF97PVM7U3
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_ENTITLEMENTS: OneThingTodayWidget/OneThingTodayWidget.entitlements
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: "YES"
+        # Same reasoning as the app target above: NSExtension is a nested
+        # dict, not something INFOPLIST_KEY_* synthesis can express, so it
+        # comes from the plain Info.plist file and gets merged in.
+        INFOPLIST_FILE: OneThingTodayWidget/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: "One Thing Today"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SKIP_INSTALL: "YES"
