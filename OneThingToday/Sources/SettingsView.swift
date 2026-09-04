@@ -1,8 +1,8 @@
 import SwiftUI
 import OneThingTodayDomain
 
-struct ScheduleSettingsView: View {
-    @State var viewModel: ScheduleSettingsViewModel
+struct SettingsView: View {
+    @State var viewModel: SettingsViewModel
 
     var body: some View {
         Form {
@@ -13,12 +13,21 @@ struct ScheduleSettingsView: View {
 
             Section {
                 Button(viewModel.isScheduled ? "Reschedule" : "Enable Daily Reminders") {
-                    Task { await viewModel.enable() }
+                    Task { await viewModel.reschedule() }
                 }
             }
 
+            Section("Permissions") {
+                Label(
+                    viewModel.isScheduled ? "Alarms are scheduled" : "Alarms aren't scheduled yet",
+                    systemImage: viewModel.isScheduled ? "checkmark.circle.fill" : "exclamationmark.circle"
+                )
+                .foregroundStyle(viewModel.isScheduled ? .green : .secondary)
+                .accessibilityElement(children: .combine)
+            }
+
             if let plan = viewModel.plan {
-                Section("What gets scheduled (from RelayPolicy)") {
+                Section("What gets scheduled") {
                     ForEach(Array(plan.checkpoints.enumerated()), id: \.offset) { _, checkpoint in
                         HStack {
                             Text(label(for: checkpoint.kind))
@@ -27,8 +36,15 @@ struct ScheduleSettingsView: View {
                                 .foregroundStyle(.secondary)
                                 .monospacedDigit()
                         }
+                        .accessibilityElement(children: .combine)
                     }
                 }
+            }
+
+            Section("Privacy") {
+                Text("One Thing Today has no account, no analytics, and no server. Your task, reflections, and schedule are stored only on this device. The on-device AI that sharpens tasks and writes your weekly digest runs entirely on your iPhone — nothing you type is ever sent anywhere.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
             }
 
             if let error = viewModel.errorMessage {
@@ -70,7 +86,7 @@ struct ScheduleSettingsView: View {
             }
             #endif
         }
-        .navigationTitle("Schedule")
+        .navigationTitle("Settings")
     }
 
     #if DEBUG

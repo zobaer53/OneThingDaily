@@ -4,7 +4,7 @@ import OneThingTodayDomain
 import OneThingTodayData
 
 @Observable
-final class ScheduleSettingsViewModel {
+final class SettingsViewModel {
     private let scheduleUseCase: ScheduleDailyAlarmsUseCase
 
     var morningTime: Date = Calendar.current.date(bySettingHour: 7, minute: 0, second: 0, of: .now) ?? .now
@@ -25,7 +25,7 @@ final class ScheduleSettingsViewModel {
         self.scheduleUseCase = ScheduleDailyAlarmsUseCase(scheduling: scheduling)
     }
 
-    func enable() async {
+    func reschedule() async {
         errorMessage = nil
         await AlarmDebugLog.shared.clear()
         let calendar = Calendar.current
@@ -35,7 +35,7 @@ final class ScheduleSettingsViewModel {
             plan = try await scheduleUseCase(morning: morning, evening: evening)
             isScheduled = true
         } catch {
-            errorMessage = "\(error)"
+            errorMessage = error.localizedDescription
         }
         // Read the trace back regardless of success/failure so we can see
         // it directly in the app, no Xcode console needed.
@@ -44,7 +44,7 @@ final class ScheduleSettingsViewModel {
 
     /// Re-reads the trace without touching scheduling — so checking what
     /// happened on the Today tab (Live Activity start/update/end) doesn't
-    /// require re-running `enable()` and cancelling/rescheduling alarms
+    /// require re-running `reschedule()` and cancelling/rescheduling alarms
     /// just to see the log.
     func refreshDebugTrace() async {
         debugTrace = await AlarmDebugLog.shared.snapshot()

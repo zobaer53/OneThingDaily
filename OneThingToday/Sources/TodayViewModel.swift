@@ -4,7 +4,7 @@ import OneThingTodayDomain
 
 /// Depends only on Domain protocols and use cases — never on SwiftData,
 /// ActivityKit, or any other concrete Data-layer type. The composition root
-/// (`OneThingTodayApp`) is the only place those get constructed and handed
+/// (`AppContainer`) is the only place those get constructed and handed
 /// in here.
 @Observable
 final class TodayViewModel {
@@ -12,12 +12,14 @@ final class TodayViewModel {
     private let startUseCase: StartMorningCheckInUseCase
     private let completeUseCase: CompleteTaskUseCase
     private let sharpenUseCase: SharpenTaskUseCase
+    private let resumeUseCase: ResumeLiveActivityUseCase
     private let ai: AIAssistRepository
 
     var session: FocusDaySession?
     var draftText: String = ""
     var errorMessage: String?
     var isAISharpenAvailable = false
+    var isBusy = false
 
     init(sessions: FocusSessionRepository, activities: LiveActivityRepository, ai: AIAssistRepository) {
         self.sessions = sessions
@@ -25,6 +27,19 @@ final class TodayViewModel {
         self.startUseCase = StartMorningCheckInUseCase(sessions: sessions, activities: activities)
         self.completeUseCase = CompleteTaskUseCase(sessions: sessions, activities: activities)
         self.sharpenUseCase = SharpenTaskUseCase(sessions: sessions, activities: activities, ai: ai)
+        self.resumeUseCase = ResumeLiveActivityUseCase(sessions: sessions, activities: activities)
+    }
+
+    /// True once a task has been set for today and it isn't finished yet.
+    var hasActiveTask: Bool {
+        guard let session else { return false }
+        return !session.taskText.isEmpty && !session.isDone
+    }
+
+    /// The Live Activity fallback only makes sense once there's something
+    /// on-screen to resume and it isn't currently showing.
+    var canResumeLiveActivity: Bool {
+        hasActiveTask && session?.currentActivityID == nil
     }
 
     func load() async {
@@ -34,38 +49,47 @@ final class TodayViewModel {
             session = today
             draftText = today.taskText
         } catch {
-            errorMessage = "\(error)"
+            errorMessage = error.localizedDescription
         }
     }
 
     func sharpen() async {
         guard let id = session?.id else { return }
-        errorMessage = nil
-        do {
+        await run {
             session = try await sharpenUseCase(dayID: id)
             draftText = session?.taskText ?? draftText
-        } catch {
-            errorMessage = "\(error)"
         }
     }
 
     func start() async {
-        errorMessage = nil
-        do {
+        await run {
             session = try await startUseCase(taskText: draftText, dayID: DayIdentifier.today())
-        } catch {
-            errorMessage = "\(error)"
         }
     }
 
     func complete() async {
         guard let id = session?.id else { return }
-        errorMessage = nil
-        do {
+        await run {
             try await completeUseCase(dayID: id)
             session = try await sessions.session(id: id)
+        }
+    }
+
+    func resumeLiveActivity() async {
+        guard let id = session?.id else { return }
+        await run {
+            session = try await resumeUseCase(dayID: id)
+        }
+    }
+
+    private func run(_ operation: () async throws -> Void) async {
+        errorMessage = nil
+        isBusy = true
+        defer { isBusy = false }
+        do {
+            try await operation()
         } catch {
-            errorMessage = "\(error)"
+            errorMessage = error.localizedDescription
         }
     }
 }

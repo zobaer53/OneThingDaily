@@ -12,6 +12,7 @@ targets:
   OneThingToday:
     type: application
     platform: iOS
+    scheme: {}
     sources:
       - OneThingToday/Sources
     dependencies:
@@ -47,6 +48,7 @@ targets:
   OneThingTodayWidget:
     type: app-extension
     platform: iOS
+    scheme: {}
     sources:
       - OneThingTodayWidget/Sources
     dependencies:

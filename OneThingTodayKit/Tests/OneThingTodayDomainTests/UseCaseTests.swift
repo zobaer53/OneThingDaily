@@ -100,6 +100,36 @@ struct UseCaseTests {
         #expect(savedReflections.first?.text == "Shipped it, felt great.")
     }
 
+    @Test("Resuming puts a fresh Live Activity back on screen without touching the session's other state")
+    func resumeStartsFreshActivity() async throws {
+        let sessions = FakeFocusSessionRepository()
+        let activities = FakeLiveActivityRepository()
+        let session = try await StartMorningCheckInUseCase(sessions: sessions, activities: activities)(
+            taskText: "Write the report", dayID: "2026-09-04"
+        )
+        // Simulate the Activity having gone stale/vanished: the app never
+        // learns about that directly, so nothing clears `currentActivityID`
+        // on its own — this just confirms resume overwrites it with a new one.
+        let resume = ResumeLiveActivityUseCase(sessions: sessions, activities: activities)
+
+        let resumed = try await resume(dayID: session.id)
+
+        #expect(await activities.startCount == 2)
+        #expect(resumed.currentActivityID != session.currentActivityID)
+        #expect(resumed.taskText == "Write the report")
+    }
+
+    @Test("Resuming with no session for the day throws")
+    func resumeThrowsWithoutSession() async throws {
+        let sessions = FakeFocusSessionRepository()
+        let activities = FakeLiveActivityRepository()
+        let resume = ResumeLiveActivityUseCase(sessions: sessions, activities: activities)
+
+        await #expect(throws: OneThingTodayError.noSessionToday) {
+            try await resume(dayID: "2026-09-04")
+        }
+    }
+
     @Test("Scheduling alarms throws when the user declines the permission")
     func scheduleAlarmsThrowsWhenDenied() async throws {
         let scheduling = FakeSchedulingRepository(authorizationGranted: false)

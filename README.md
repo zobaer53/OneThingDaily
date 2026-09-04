@@ -15,10 +15,12 @@ Claude published earlier — this repo is the code that follows it.
   engine (Phase 4), and the on-device Foundation Models AI service
   (Phase 5).
 
-`OneThingToday/` — the app target (Today / Schedule screens, composition
-root). `OneThingTodayWidget/` — the widget extension target: the Live
-Activity's Lock Screen card and Dynamic Island (compact/minimal/expanded).
-Both are generated from `project.yml` via `xcodegen generate`.
+`OneThingToday/` — the app target: onboarding, and the Today / Weekly
+Digest / Settings screens, each with its own `@Observable` view model,
+wired up by `AppContainer` (the composition root). `OneThingTodayWidget/`
+— the widget extension target: the Live Activity's Lock Screen card and
+Dynamic Island (compact/minimal/expanded). Both are generated from
+`project.yml` via `xcodegen generate`.
 
 ## Try it right now
 
@@ -43,9 +45,12 @@ xcodebuild test -scheme OneThingTodayKit-Package -destination 'platform=iOS Simu
 
 ## What's next
 
-Phase 6 (app presentation layer) is next — onboarding, the real Today/Weekly
-Digest/Settings screens, and polish beyond the placeholder UI used to prove
-out each phase so far. Everything before it (Phases 0–5: domain layer,
-persistence, AlarmKit scheduling, the Live Activity relay engine, and the
-on-device Foundation Models "Sharpen" + weekly digest summary) is built and
-passing its exit tests on the iOS 26.2 SDK.
+Phase 7 (polish & App Store prep) is next — app icon, empty/permission-denied/
+unsupported-device states, optional StoreKit gating for the digest, Privacy
+Nutrition Label, and real screenshots. Everything before it (Phases 0–6:
+domain layer, persistence, AlarmKit scheduling, the Live Activity relay
+engine, on-device Foundation Models, and the onboarding/Today/Weekly Digest/
+Settings screens) is built. Not yet re-verified by `xcodebuild` on this
+machine after a local Xcode update to 26.6 left only iOS 26.2/18.5 simulator
+runtimes installed (26.5 — Xcode's default SDK — isn't); build/run it in
+Xcode.app, which can fetch the missing platform on open.

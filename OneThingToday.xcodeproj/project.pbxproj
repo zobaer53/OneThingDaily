@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		14B46B4C985BEA83A3891113 /* FocusActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AE2A6CBD839C0BD2E274E /* FocusActivityWidget.swift */; };
+		1FC4882C4688BE8CAC773427 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454022BF5156AE1615F9BFA9 /* OnboardingViewModel.swift */; };
+		3479AD237340F05B97BCB47F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C809AC2694C32B8F2B48F4 /* SettingsViewModel.swift */; };
+		35F717FEEF80670950700C95 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DF82B1F172FDCF591828C /* OnboardingView.swift */; };
 		3ECC2D2F4901B3E78E2E2F29 /* OneThingTodayData in Frameworks */ = {isa = PBXBuildFile; productRef = A6362EE8112DBD1F1423EF34 /* OneThingTodayData */; };
+		40EA8FEFAD73EC3316445BE5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354AF386747F6403876B5F3 /* SettingsView.swift */; };
 		4A00BC762DA5FFEEAC543946 /* OneThingTodayDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 9ADA82CA309A40AA37E3E152 /* OneThingTodayDomain */; };
 		4A0E3F13F281B5365FB32521 /* OneThingTodayData in Frameworks */ = {isa = PBXBuildFile; productRef = B095B892E90F1F77BD4F04AE /* OneThingTodayData */; };
+		4A5E990DB8F9E84F9045B593 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5489567BAF4BD85B1B77B /* AppContainer.swift */; };
+		7F8026C75782667FB4A06719 /* WeeklyDigestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB3CC58513FF1FCD425C89 /* WeeklyDigestView.swift */; };
 		9633EB9E87ECFF42B92BC709 /* OneThingTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */; };
+		9C75CAEAD8F138137D9612CC /* WeeklyDigestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D2377F7B6527C7A5D1B33 /* WeeklyDigestViewModel.swift */; };
 		9D163F155EEDA15332AC51AA /* OneThingTodayDomain in Frameworks */ = {isa = PBXBuildFile; productRef = D244F140AB22F69485243DF3 /* OneThingTodayDomain */; };
 		9D4D53D9B95A348F1A11AACA /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD34E732F951DD1FAE19D0 /* TodayViewModel.swift */; };
-		9FD151B4CB30F6D72136D9FB /* NoopSchedulingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CBA01C6D156E5B2E5BC021 /* NoopSchedulingRepository.swift */; };
-		B90DD4BCC0FA4ED4B46D5896 /* ScheduleSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76DC0DBD6ADBB4EC65D0D1E /* ScheduleSettingsView.swift */; };
-		BFC1EC14DEB318D92A8EC4DA /* ScheduleSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCDAB45C0E1924FBCF4393D /* ScheduleSettingsViewModel.swift */; };
 		C4EEFD9C7D1D6C6C7AB2271C /* OneThingTodayWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F853AA79E29A8D1A6BD8BCEB /* OneThingTodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C82F87890734BC1B8DA0846D /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0AEC398DF09515FCF83131 /* TodayView.swift */; };
 		D1B61D05F20318193EBE34E7 /* OneThingTodayWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BEEB8337B0A8EB54DEC29 /* OneThingTodayWidgetBundle.swift */; };
-		ED291BB7D9445649871BE5D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E288F36BCD047F09558FDD90 /* ContentView.swift */; };
 		FEF7832983DB2F4C899430F2 /* FocusLockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E467F9B222C535A418DBE /* FocusLockScreenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,14 +54,18 @@
 /* Begin PBXFileReference section */
 		09DD34E732F951DD1FAE19D0 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		1FBEE3FB60F2E5030CA8FE88 /* OneThingTodayKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OneThingTodayKit; path = OneThingTodayKit; sourceTree = SOURCE_ROOT; };
-		48CBA01C6D156E5B2E5BC021 /* NoopSchedulingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoopSchedulingRepository.swift; sourceTree = "<group>"; };
-		7FCDAB45C0E1924FBCF4393D /* ScheduleSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsViewModel.swift; sourceTree = "<group>"; };
+		33E5489567BAF4BD85B1B77B /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		454022BF5156AE1615F9BFA9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		5B0AEC398DF09515FCF83131 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		7D6DF82B1F172FDCF591828C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8354AF386747F6403876B5F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A35BEEB8337B0A8EB54DEC29 /* OneThingTodayWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneThingTodayWidgetBundle.swift; sourceTree = "<group>"; };
+		C4C809AC2694C32B8F2B48F4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneThingTodayApp.swift; sourceTree = "<group>"; };
-		C76DC0DBD6ADBB4EC65D0D1E /* ScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsView.swift; sourceTree = "<group>"; };
+		CDDB3CC58513FF1FCD425C89 /* WeeklyDigestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDigestView.swift; sourceTree = "<group>"; };
 		D98AE2A6CBD839C0BD2E274E /* FocusActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusActivityWidget.swift; sourceTree = "<group>"; };
 		DA6E567D1AAB7612381AE881 /* OneThingToday.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OneThingToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E288F36BCD047F09558FDD90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F26D2377F7B6527C7A5D1B33 /* WeeklyDigestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDigestViewModel.swift; sourceTree = "<group>"; };
 		F853AA79E29A8D1A6BD8BCEB /* OneThingTodayWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OneThingTodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3E467F9B222C535A418DBE /* FocusLockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusLockScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,12 +112,16 @@
 		AE5A43379746366FD54D1B50 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E288F36BCD047F09558FDD90 /* ContentView.swift */,
-				48CBA01C6D156E5B2E5BC021 /* NoopSchedulingRepository.swift */,
+				33E5489567BAF4BD85B1B77B /* AppContainer.swift */,
+				7D6DF82B1F172FDCF591828C /* OnboardingView.swift */,
+				454022BF5156AE1615F9BFA9 /* OnboardingViewModel.swift */,
 				C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */,
-				C76DC0DBD6ADBB4EC65D0D1E /* ScheduleSettingsView.swift */,
-				7FCDAB45C0E1924FBCF4393D /* ScheduleSettingsViewModel.swift */,
+				8354AF386747F6403876B5F3 /* SettingsView.swift */,
+				C4C809AC2694C32B8F2B48F4 /* SettingsViewModel.swift */,
+				5B0AEC398DF09515FCF83131 /* TodayView.swift */,
 				09DD34E732F951DD1FAE19D0 /* TodayViewModel.swift */,
+				CDDB3CC58513FF1FCD425C89 /* WeeklyDigestView.swift */,
+				F26D2377F7B6527C7A5D1B33 /* WeeklyDigestViewModel.swift */,
 			);
 			name = Sources;
 			path = OneThingToday/Sources;
@@ -238,12 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED291BB7D9445649871BE5D7 /* ContentView.swift in Sources */,
-				9FD151B4CB30F6D72136D9FB /* NoopSchedulingRepository.swift in Sources */,
+				4A5E990DB8F9E84F9045B593 /* AppContainer.swift in Sources */,
+				35F717FEEF80670950700C95 /* OnboardingView.swift in Sources */,
+				1FC4882C4688BE8CAC773427 /* OnboardingViewModel.swift in Sources */,
 				9633EB9E87ECFF42B92BC709 /* OneThingTodayApp.swift in Sources */,
-				B90DD4BCC0FA4ED4B46D5896 /* ScheduleSettingsView.swift in Sources */,
-				BFC1EC14DEB318D92A8EC4DA /* ScheduleSettingsViewModel.swift in Sources */,
+				40EA8FEFAD73EC3316445BE5 /* SettingsView.swift in Sources */,
+				3479AD237340F05B97BCB47F /* SettingsViewModel.swift in Sources */,
+				C82F87890734BC1B8DA0846D /* TodayView.swift in Sources */,
 				9D4D53D9B95A348F1A11AACA /* TodayViewModel.swift in Sources */,
+				7F8026C75782667FB4A06719 /* WeeklyDigestView.swift in Sources */,
+				9C75CAEAD8F138137D9612CC /* WeeklyDigestViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
