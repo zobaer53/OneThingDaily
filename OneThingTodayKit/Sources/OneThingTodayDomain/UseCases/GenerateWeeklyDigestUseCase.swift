@@ -17,6 +17,9 @@ public struct GenerateWeeklyDigestUseCase: Sendable {
         guard await ai.isAvailable else {
             throw OneThingTodayError.aiUnavailable
         }
+        guard !recentSessions.isEmpty else {
+            throw OneThingTodayError.noDataYet
+        }
 
         let summary = try await ai.summarize(sessions: recentSessions, reflections: recentReflections)
         let completed = recentSessions.filter(\.isDone).count

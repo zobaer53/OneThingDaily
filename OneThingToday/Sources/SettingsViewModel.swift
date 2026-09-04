@@ -12,7 +12,15 @@ final class SettingsViewModel {
     var plan: RelayPlan?
     var errorMessage: String?
     var debugTrace: [String] = []
-    var isScheduled = false
+    /// Seeded from the flag onboarding sets on success, so reopening
+    /// Settings doesn't claim alarms aren't scheduled when they already are
+    /// — `SchedulingRepository` has no "read current schedule" query, only
+    /// authorize/schedule/cancel, so this is the source of truth for display.
+    var isScheduled = UserDefaults.standard.bool(forKey: "hasScheduledAlarms")
+    /// Alarm permission can only be re-granted from the iOS Settings app once
+    /// declined — this drives a distinct "open Settings" affordance instead
+    /// of just the generic error text.
+    var permissionWasDenied = false
 
     #if DEBUG
     var debugCompressionFactor: Double {
@@ -27,6 +35,7 @@ final class SettingsViewModel {
 
     func reschedule() async {
         errorMessage = nil
+        permissionWasDenied = false
         await AlarmDebugLog.shared.clear()
         let calendar = Calendar.current
         let morning = calendar.dateComponents([.hour, .minute], from: morningTime)
@@ -34,6 +43,10 @@ final class SettingsViewModel {
         do {
             plan = try await scheduleUseCase(morning: morning, evening: evening)
             isScheduled = true
+            UserDefaults.standard.set(true, forKey: "hasScheduledAlarms")
+        } catch OneThingTodayError.schedulingDenied {
+            errorMessage = OneThingTodayError.schedulingDenied.errorDescription
+            permissionWasDenied = true
         } catch {
             errorMessage = error.localizedDescription
         }

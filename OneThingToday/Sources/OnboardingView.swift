@@ -58,7 +58,13 @@ struct OnboardingView: View {
             .controlSize(.large)
             .disabled(viewModel.isScheduling)
 
-            if step != .welcome {
+            if step == .permission && viewModel.permissionWasDenied {
+                Button("Continue Without Reminders") {
+                    onComplete()
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.secondary)
+            } else if step != .welcome {
                 Button("Back") {
                     step = Step(rawValue: step.rawValue - 1) ?? .welcome
                 }
@@ -81,7 +87,7 @@ struct OnboardingView: View {
         case .welcome, .times:
             step = Step(rawValue: step.rawValue + 1) ?? .permission
         case .permission:
-            if await viewModel.finish() {
+            if await viewModel.finish() == .success {
                 onComplete()
             }
         }

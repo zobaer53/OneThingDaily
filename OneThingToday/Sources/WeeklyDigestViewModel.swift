@@ -11,6 +11,7 @@ final class WeeklyDigestViewModel {
     var errorMessage: String?
     var isLoading = false
     var isAIAvailable = true
+    var hasNoDataYet = false
 
     init(sessions: FocusSessionRepository, reflections: ReflectionRepository, ai: AIAssistRepository) {
         self.generateUseCase = GenerateWeeklyDigestUseCase(sessions: sessions, reflections: reflections, ai: ai)
@@ -22,10 +23,13 @@ final class WeeklyDigestViewModel {
         guard isAIAvailable else { return }
 
         errorMessage = nil
+        hasNoDataYet = false
         isLoading = true
         defer { isLoading = false }
         do {
             digest = try await generateUseCase()
+        } catch OneThingTodayError.noDataYet {
+            hasNoDataYet = true
         } catch {
             errorMessage = error.localizedDescription
         }

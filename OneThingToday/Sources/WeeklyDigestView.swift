@@ -13,6 +13,8 @@ struct WeeklyDigestView: View {
                     ProgressView("Summarizing your week…")
                         .frame(maxWidth: .infinity)
                         .padding(.top, 40)
+                } else if viewModel.hasNoDataYet {
+                    noDataCard
                 } else if let digest = viewModel.digest {
                     progressCard(digest)
                     summaryCard(digest)
@@ -34,6 +36,20 @@ struct WeeklyDigestView: View {
             Label("On-device AI isn't available", systemImage: "sparkles")
                 .font(.headline)
             Text("The weekly digest is written by the on-device Foundation Models on this iPhone. It isn't available on this device or with the current settings, so there's nothing to summarize here.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .accessibilityElement(children: .combine)
+        .padding(18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+    }
+
+    private var noDataCard: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Label("Nothing to summarize yet", systemImage: "calendar.badge.clock")
+                .font(.headline)
+            Text("Set today's one thing on the Today tab and finish a day or two — your digest shows up here once there's a week of focus sessions to look back on.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }

@@ -17,6 +17,7 @@
 		4A0E3F13F281B5365FB32521 /* OneThingTodayData in Frameworks */ = {isa = PBXBuildFile; productRef = B095B892E90F1F77BD4F04AE /* OneThingTodayData */; };
 		4A5E990DB8F9E84F9045B593 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5489567BAF4BD85B1B77B /* AppContainer.swift */; };
 		7F8026C75782667FB4A06719 /* WeeklyDigestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB3CC58513FF1FCD425C89 /* WeeklyDigestView.swift */; };
+		8379D909399B5B0DE45BBF23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E45B683A6B7769FCAFC0E54 /* Assets.xcassets */; };
 		9633EB9E87ECFF42B92BC709 /* OneThingTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */; };
 		9C75CAEAD8F138137D9612CC /* WeeklyDigestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D2377F7B6527C7A5D1B33 /* WeeklyDigestViewModel.swift */; };
 		9D163F155EEDA15332AC51AA /* OneThingTodayDomain in Frameworks */ = {isa = PBXBuildFile; productRef = D244F140AB22F69485243DF3 /* OneThingTodayDomain */; };
@@ -59,6 +60,7 @@
 		5B0AEC398DF09515FCF83131 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		7D6DF82B1F172FDCF591828C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8354AF386747F6403876B5F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9E45B683A6B7769FCAFC0E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A35BEEB8337B0A8EB54DEC29 /* OneThingTodayWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneThingTodayWidgetBundle.swift; sourceTree = "<group>"; };
 		C4C809AC2694C32B8F2B48F4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C5E1EC634A81D276460E2839 /* OneThingTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneThingTodayApp.swift; sourceTree = "<group>"; };
@@ -130,11 +132,20 @@
 		C77FAFE6259731C063F7B513 = {
 			isa = PBXGroup;
 			children = (
+				C9EFB731598F0F4E3444426D /* OneThingToday */,
 				8E095655AFCAFBC7DC0B544F /* Packages */,
 				AE5A43379746366FD54D1B50 /* Sources */,
 				F537F132929248F5E6756DE2 /* Sources */,
 				310D7888D1AB43B14CA6CFAA /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		C9EFB731598F0F4E3444426D /* OneThingToday */ = {
+			isa = PBXGroup;
+			children = (
+				9E45B683A6B7769FCAFC0E54 /* Assets.xcassets */,
+			);
+			path = OneThingToday;
 			sourceTree = "<group>";
 		};
 		F537F132929248F5E6756DE2 /* Sources */ = {
@@ -156,6 +167,7 @@
 			buildConfigurationList = 0D23BB0E7BD4D7CDAD71C9CD /* Build configuration list for PBXNativeTarget "OneThingToday" */;
 			buildPhases = (
 				31CF2EA709E17A47F9834529 /* Sources */,
+				5532D08B2C358C28B5F3F033 /* Resources */,
 				4B3E16C5BCC9DCC31200BEB7 /* Frameworks */,
 				7CBF76103B1E7D566A253907 /* Embed Foundation Extensions */,
 			);
@@ -234,6 +246,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5532D08B2C358C28B5F3F033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8379D909399B5B0DE45BBF23 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B6802FC94940D59467739A3 /* Sources */ = {

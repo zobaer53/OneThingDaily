@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import OneThingTodayDomain
 
 struct SettingsView: View {
@@ -48,8 +49,15 @@ struct SettingsView: View {
             }
 
             if let error = viewModel.errorMessage {
-                Section("Error") {
+                Section(viewModel.permissionWasDenied ? "Permission Denied" : "Error") {
                     Text(error).foregroundStyle(.red)
+                    if viewModel.permissionWasDenied {
+                        Button("Open Settings") {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                    }
                 }
             }
 

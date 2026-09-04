@@ -5,6 +5,7 @@ public enum OneThingTodayError: LocalizedError, Sendable, Equatable {
     case schedulingDenied
     case aiUnavailable
     case liveActivityUnavailable
+    case noDataYet
 
     public var errorDescription: String? {
         switch self {
@@ -16,6 +17,8 @@ public enum OneThingTodayError: LocalizedError, Sendable, Equatable {
             return "On-device AI isn't available on this device right now."
         case .liveActivityUnavailable:
             return "Live Activities aren't available — check Settings > Face ID & Passcode > Live Activities."
+        case .noDataYet:
+            return "There's no focus history yet — finish a day or two and your digest will show up here."
         }
     }
 }

@@ -15,6 +15,7 @@ targets:
     scheme: {}
     sources:
       - OneThingToday/Sources
+      - path: OneThingToday/Assets.xcassets
     dependencies:
       - package: OneThingTodayKit
         product: OneThingTodayDomain
@@ -30,6 +31,7 @@ targets:
         CODE_SIGN_ENTITLEMENTS: OneThingToday/OneThingToday.entitlements
         SWIFT_VERSION: "5.0"
         GENERATE_INFOPLIST_FILE: "YES"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         # NSAlarmKitUsageDescription doesn't get picked up by Xcode's
         # INFOPLIST_KEY_* synthesis in this Xcode version (confirmed by
         # inspecting the actual built Info.plist — every other
