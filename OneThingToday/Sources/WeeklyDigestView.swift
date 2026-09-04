@@ -53,9 +53,10 @@ struct WeeklyDigestView: View {
                     .font(.title.bold())
             }
             Spacer()
-            ProgressView(value: Double(digest.daysCompleted), total: Double(max(digest.daysTotal, 1)))
-                .progressViewStyle(.circular)
-                .accessibilityHidden(true)
+            DigestProgressRing(
+                progress: digest.daysTotal > 0 ? Double(digest.daysCompleted) / Double(digest.daysTotal) : 0
+            )
+            .accessibilityHidden(true)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Completed \(digest.daysCompleted) of \(digest.daysTotal) days this week")
@@ -75,5 +76,25 @@ struct WeeklyDigestView: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+    }
+}
+
+/// `ProgressView(value:total:).progressViewStyle(.circular)` renders as an
+/// indeterminate spinner on iOS regardless of the value passed in — the
+/// circular style only shows determinate progress on watchOS. A plain
+/// `Circle().trim(from:to:)` ring is the standard workaround.
+private struct DigestProgressRing: View {
+    let progress: Double
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(.secondary.opacity(0.2), lineWidth: 5)
+            Circle()
+                .trim(from: 0, to: min(max(progress, 0), 1))
+                .stroke(.tint, style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                .rotationEffect(.degrees(-90))
+        }
+        .frame(width: 40, height: 40)
     }
 }

@@ -166,9 +166,11 @@ private struct OnboardingTimesPage: View {
 
                 VStack(spacing: 0) {
                     DatePicker("Morning check-in", selection: $viewModel.morningTime, displayedComponents: .hourAndMinute)
+                        .datePickerStyle(.compact)
                         .padding(.vertical, 12)
                     Divider()
                     DatePicker("Evening reflection", selection: $viewModel.eveningTime, displayedComponents: .hourAndMinute)
+                        .datePickerStyle(.compact)
                         .padding(.vertical, 12)
                 }
                 .padding(.horizontal, 16)
