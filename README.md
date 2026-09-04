@@ -1,8 +1,6 @@
 # One Thing Today
 
-A single-purpose daily-focus iOS app. Full build plan (architecture, the
-Live Activity relay engine, phase-by-phase roadmap) lives in the artifact
-Claude published earlier — this repo is the code that follows it.
+A single-purpose daily-focus iOS app.
 
 ## What's here right now
 
