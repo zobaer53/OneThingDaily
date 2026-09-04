@@ -66,29 +66,67 @@ cd OneThingTodayKit
 xcodebuild test -scheme OneThingTodayKit-Package -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
 ```
 
+## Privacy Nutrition Label (App Store Connect)
+
+Not a code artifact — filled in by hand under **App Store Connect → your
+app → App Privacy** when the app record is created. Every category is
+**Data Not Collected**, because there's no account, no analytics SDK, no
+network calls, and no server anywhere in the stack: the task text,
+reflections, and schedule live only in the on-device SwiftData store, and
+the on-device Foundation Models calls (Sharpen, weekly summary) never leave
+the phone.
+
+| Category | Answer |
+|---|---|
+| Contact Info | Not Collected |
+| Health & Fitness | Not Collected |
+| Financial Info | Not Collected |
+| Location | Not Collected |
+| Sensitive Info | Not Collected |
+| Contacts | Not Collected |
+| User Content | Not Collected |
+| Browsing History | Not Collected |
+| Search History | Not Collected |
+| Identifiers | Not Collected |
+| Purchases | Not Collected |
+| Usage Data | Not Collected |
+| Diagnostics | Not Collected |
+| Other Data | Not Collected |
+
 ## What's next
 
-Phase 7 (polish & App Store prep) is in progress. Done so far: a real app
-icon (`OneThingToday/Assets.xcassets/AppIcon.appiconset`), a distinct "no
-history yet" empty state on the Weekly Digest screen instead of a wasted
-on-device model call on a brand-new user's first day, and a fix for a real
-onboarding trap — declining the AlarmKit permission used to leave a user
-stuck on the permission screen forever (AlarmKit denial can only be reversed
-from the iOS Settings app, not by re-prompting), so onboarding now offers
-"Continue Without Reminders"; Settings shows the same denied state with a
-direct "Open Settings" button. A second real bug turned up live-testing the
-walkthrough for the screenshots below: Settings always claimed "alarms
-aren't scheduled yet" on open even right after onboarding scheduled them,
-since it never read back any persisted state — fixed with a small
-`UserDefaults` flag both onboarding and Settings write on success. App Store
-screenshots (below) are done. Monetization (the plan's optional StoreKit
-gate for the digest) is deliberately skipped for v1. Still open: the Privacy
-Nutrition Label (answered "data not collected" across the board in App Store
-Connect — nothing in this app leaves the device).
+Phase 7 (polish & App Store prep) is done. Landed this pass: a real app icon
+(`OneThingToday/Assets.xcassets/AppIcon.appiconset`), a distinct "no history
+yet" empty state on the Weekly Digest screen instead of a wasted on-device
+model call on a brand-new user's first day, and a fix for a real onboarding
+trap — declining the AlarmKit permission used to leave a user stuck on the
+permission screen forever (AlarmKit denial can only be reversed from the iOS
+Settings app, not by re-prompting), so onboarding now offers "Continue
+Without Reminders"; Settings shows the same denied state with a direct "Open
+Settings" button. A second real bug turned up live-testing the walkthrough
+for the screenshots below: Settings always claimed "alarms aren't scheduled
+yet" on open even right after onboarding scheduled them, since it never read
+back any persisted state — fixed with a small `UserDefaults` flag both
+onboarding and Settings write on success. App Store screenshots (below) are
+done, and the Privacy Nutrition Label answers are above, ready to paste into
+App Store Connect. Monetization (the plan's optional StoreKit gate for the
+digest) is deliberately skipped for v1.
 
-Everything before Phase 7 (domain layer, persistence, AlarmKit scheduling,
-the Live Activity relay engine, on-device Foundation Models, and the
-onboarding/Today/Weekly Digest/Settings screens) is built and, as of this
+Everything through Phase 7 (domain layer, persistence, AlarmKit scheduling,
+the Live Activity relay engine, on-device Foundation Models, all four app
+screens, the icon, and the permission/empty states) is built and, as of this
 pass, actually verified with `xcodebuild` against a real iOS 26.5 simulator
 — both the app+widget build and the full `OneThingTodayKit` domain test
 suite (16 tests) pass.
+
+**Next: Phase 8** (QA & submission) — this is the one phase that needs a
+physical iPhone rather than the simulator, since it's testing real AlarmKit
++ Live Activity behavior over actual elapsed hours, not compressed/simulated
+time:
+- Three or more full real-device days with different morning/evening time
+  combinations
+- A short TestFlight beta, watching specifically for "the Lock Screen went
+  blank" reports
+- App Review notes explaining the AlarmKit usage plainly — real,
+  user-requested daily alerts, not background scheduling in disguise
+- Exit criterion: submitted, with a written note of what to change for v1.1
